@@ -45,8 +45,16 @@ $main-width: 50%;
     width: $main-width;
 }
 
-//TODO STYLE
+.wawawa{
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    background-color: black;
+}
 
+
+
+//TODO STYLE
 .todo{
     display: flex;
     justify-content: space-between;
@@ -62,6 +70,10 @@ $main-width: 50%;
         align-items: center;
         width: 75%;
         word-wrap: break-word;
+
+        & > h4{
+            margin: 0;
+        }
     }
     & > div:last-child{
         display: flex;

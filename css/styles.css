@@ -45,6 +45,15 @@
   width: 50%;
 }
 
+.wawawa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  background-color: black;
+}
+
 .todo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,6 +79,9 @@
           align-items: center;
   width: 75%;
   word-wrap: break-word;
+}
+.todo > div:first-child > h4 {
+  margin: 0;
 }
 .todo > div:last-child {
   display: -webkit-box;
