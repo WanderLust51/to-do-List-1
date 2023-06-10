@@ -1,0 +1,138 @@
+.my-bg {
+  background-color: #E6FDFF;
+}
+
+.my-bg-violet {
+  background-color: #B07BAC;
+}
+
+.my-bg-green1 {
+  background-color: #5F7367;
+}
+
+.my-bg-green2 {
+  background-color: #6E8075;
+}
+
+.my-bg-green3 {
+  background-color: #7B8C82;
+}
+
+.my-bg-hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+.my-bg-hover:hover {
+  background-color: rgba(101, 121, 108, 0.5607843137);
+}
+
+.my-btn-color {
+  background-color: #6E8075;
+}
+
+.my-btn-color:hover {
+  background-color: #65796c;
+}
+
+.my-btn-color:active {
+  background-color: #556e60 !important;
+}
+
+#head {
+  width: 50%;
+}
+
+#list {
+  width: 50%;
+}
+
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  border-radius: 0.8rem;
+}
+.todo > div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  word-wrap: break-word;
+}
+.todo > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.todo > div:last-child > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 0px) {
+  #head, #list {
+    width: 95%;
+  }
+  #head > form {
+    width: 95%;
+  }
+}
+@media (min-width: 576px) {
+  #head, #list {
+    width: 70%;
+  }
+  #head > form {
+    width: 90%;
+  }
+}
+@media (min-width: 768px) {
+  #head, #list {
+    width: 60%;
+  }
+  #head > form {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  #head, #list {
+    width: 55%;
+  }
+  #head > form {
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  #head, #list {
+    width: 50%;
+  }
+}

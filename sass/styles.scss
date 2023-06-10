@@ -1,0 +1,130 @@
+//Variables
+$main-width: 50%;
+
+// CLASES
+.my-bg{
+    background-color: #E6FDFF;
+}
+.my-bg-violet{
+    background-color: #B07BAC;
+}
+.my-bg-green1{
+    background-color: #5F7367;
+}
+.my-bg-green2{
+    background-color: #6E8075;
+}
+.my-bg-green3{
+    background-color: #7B8C82;
+}
+
+.my-bg-hover{
+    background-color: #ffffff00;
+    &:hover{
+        background-color: #65796c8f;
+    }
+}
+
+.my-btn-color{
+    background-color: #6E8075;
+}
+.my-btn-color:hover{
+    background-color: #65796c;
+}
+.my-btn-color:active{
+    background-color: #556e60 !important;
+}
+
+//Head
+#head{
+    width: $main-width;
+}
+
+//List
+#list{
+    width: $main-width;
+}
+
+//TODO STYLE
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    border-radius: 0.8rem;
+
+    & > div:first-child{
+        display: flex;
+        margin-left: 1rem;
+        align-items: center;
+        width: 75%;
+        word-wrap: break-word;
+    }
+    & > div:last-child{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 25%;
+        font-size: 2rem;
+        margin-right: 1rem;
+
+        & > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1rem;
+            margin: 0;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+@media (min-width: 0px) {
+    $main-width: 95%;
+    #head, #list{
+        width: $main-width;
+    }
+    #head > form{
+        width: 95%;
+    }
+}
+
+@media (min-width: 576px) {
+    $main-width: 70%;
+    #head, #list{
+        width: $main-width;
+    }
+    #head > form{
+        width: 90%;
+    }
+}
+@media (min-width: 768px) {
+    $main-width: 60%;
+    #head, #list{
+        width: $main-width;
+    }
+    #head > form{
+        width: 80%;
+    }
+}
+@media (min-width: 992px) {
+    $main-width: 55%;
+    #head, #list{
+        width: $main-width;
+    }
+    #head > form{
+        width: 75%;
+    }
+}
+@media (min-width: 1200px) {
+    $main-width: 50%;
+    #head, #list{
+        width: $main-width;
+    }
+}
+@media (min-width: 1400px) {
+
+}
