@@ -1,12 +1,13 @@
 //Variables
 $main-width: 50%;
+$violet: #B07BAC;
 
 // CLASES
 .my-bg{
     background-color: #E6FDFF;
 }
 .my-bg-violet{
-    background-color: #B07BAC;
+    background-color: $violet;
 }
 .my-bg-green1{
     background-color: #5F7367;
@@ -45,11 +46,33 @@ $main-width: 50%;
     width: $main-width;
 }
 
-.wawawa{
+#completedParent{
+    width: $main-width;
+}
+
+#completed{
+    width: 100%;
     display: flex;
-    width: 10rem;
-    height: 10rem;
-    background-color: black;
+
+    & > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+        border-radius: 0.8rem;
+        & > p{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            width: 95%;
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            text-decoration-thickness: 1px;
+            // font-weight: lighter;
+        }
+    }
 }
 
 
@@ -73,6 +96,8 @@ $main-width: 50%;
 
         & > h4{
             margin: 0;
+            word-wrap: break-word;
+            word-break:normal;
         }
     }
     & > div:last-child{
@@ -94,19 +119,35 @@ $main-width: 50%;
     }
 }
 
+#infoBtn{
+    $info-color: rgb(160, 160, 160);
+    font-size: 2rem;
+    padding: 0.5rem;
+    border: 2px solid $info-color;
+    border-radius: 50%;
+    color: $info-color;
+    transition-duration: 0.2s;
+
+    &:hover{
+        box-shadow: 0 0 15px -5px $violet;
+        transition-duration: 0.1s;
+    }
+
+}
+
+
 @media (min-width: 0px) {
     $main-width: 95%;
-    #head, #list{
+    #head, #list, #completedParent{
         width: $main-width;
     }
     #head > form{
         width: 95%;
     }
 }
-
 @media (min-width: 576px) {
     $main-width: 70%;
-    #head, #list{
+    #head, #list, #completedParent{
         width: $main-width;
     }
     #head > form{
@@ -115,7 +156,7 @@ $main-width: 50%;
 }
 @media (min-width: 768px) {
     $main-width: 60%;
-    #head, #list{
+    #head, #list, #completedParent{
         width: $main-width;
     }
     #head > form{
@@ -124,7 +165,7 @@ $main-width: 50%;
 }
 @media (min-width: 992px) {
     $main-width: 55%;
-    #head, #list{
+    #head, #list, #completedParent{
         width: $main-width;
     }
     #head > form{
@@ -133,7 +174,7 @@ $main-width: 50%;
 }
 @media (min-width: 1200px) {
     $main-width: 50%;
-    #head, #list{
+    #head, #list, #completedParent{
         width: $main-width;
     }
 }

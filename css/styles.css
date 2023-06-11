@@ -45,13 +45,43 @@
   width: 50%;
 }
 
-.wawawa {
+#completedParent {
+  width: 50%;
+}
+
+#completed {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 10rem;
-  height: 10rem;
-  background-color: black;
+}
+#completed > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  border-radius: 0.8rem;
+}
+#completed > div > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  width: 95%;
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
 }
 
 .todo {
@@ -82,6 +112,8 @@
 }
 .todo > div:first-child > h4 {
   margin: 0;
+  word-wrap: break-word;
+  word-break: normal;
 }
 .todo > div:last-child {
   display: -webkit-box;
@@ -111,8 +143,24 @@
   border-radius: 0.5rem;
 }
 
+#infoBtn {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border: 2px solid rgb(160, 160, 160);
+  border-radius: 50%;
+  color: rgb(160, 160, 160);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+#infoBtn:hover {
+  -webkit-box-shadow: 0 0 15px -5px #B07BAC;
+          box-shadow: 0 0 15px -5px #B07BAC;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+
 @media (min-width: 0px) {
-  #head, #list {
+  #head, #list, #completedParent {
     width: 95%;
   }
   #head > form {
@@ -120,7 +168,7 @@
   }
 }
 @media (min-width: 576px) {
-  #head, #list {
+  #head, #list, #completedParent {
     width: 70%;
   }
   #head > form {
@@ -128,7 +176,7 @@
   }
 }
 @media (min-width: 768px) {
-  #head, #list {
+  #head, #list, #completedParent {
     width: 60%;
   }
   #head > form {
@@ -136,7 +184,7 @@
   }
 }
 @media (min-width: 992px) {
-  #head, #list {
+  #head, #list, #completedParent {
     width: 55%;
   }
   #head > form {
@@ -144,7 +192,7 @@
   }
 }
 @media (min-width: 1200px) {
-  #head, #list {
+  #head, #list, #completedParent {
     width: 50%;
   }
 }

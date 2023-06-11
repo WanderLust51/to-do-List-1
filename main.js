@@ -1,8 +1,10 @@
 let todoList = [];
+let completedList = [];
 
 $(document).ready(function(){
 
     $('form > button').click(addlist);
+    checkForLocalStorage();
 
 })
 
@@ -10,11 +12,15 @@ $(document).ready(function(){
 function addlist(){
     todo = $('#toDoInput').val();
     $('#toDoInput').val('');
+    let regx = /[a-zA-Z0-9]/gi;
 
-    todoList.push(todo);
-    let id = todoList.length - 1;
+    if (regx.test(todo)){
+        todoList.push(todo);
+        let id = todoList.length - 1;
+    
+        addRow(todo, id);
+    }
 
-    addRow(todo, id);
 }
 
 function addRow(todo, id){
@@ -45,8 +51,9 @@ function addRow(todo, id){
 
     $(newRow).append(div1);
     $(newRow).append(div2);
-
     $('#list').append(newRow);
+
+    updateStorage();
 }
 
 function deleteRow(){
@@ -61,10 +68,22 @@ function deleteRow(){
     $(row).remove();
 
     sortRows();
+    completedShowHide();
     updateStorage();
 }
+
 function completeTodo(){
-    console.log('COMPLETADO')
+    let row = $(this).parent().parent();
+    let todo = $(row).children('div:first-child').children().text();
+
+    let newRow = document.createElement('div');
+    let div = document.createElement('div');
+    let p = document.createElement('p');
+    $(p).text(todo).addClass('text-decoration-line-throug');
+    $(div).append(p).addClass('my-bg-green3');
+    $(newRow).append(div);
+
+    $('#completed').append(div);
 }
 
 function sortRows(){
@@ -77,9 +96,35 @@ function sortRows(){
     }
 }
 
-
 function updateStorage(){
     let list = JSON.stringify(todoList);
     localStorage.setItem('TodoData', list)
-    console.log('Local Storage Actualizado...');
+    // console.log('Local Storage Actualizado...');
+}
+
+function completedShowHide(){
+    if ($('#completed').children().length > 0){
+        $('#completedParent').addClass('d-flex').removeClass('d-none');
+    }else{
+        $('#completedParent').removeClass('d-flex').addClass('d-none');
+    }
+}
+
+function checkForLocalStorage(){
+    let data = JSON.parse(localStorage.getItem('TodoData'));
+
+    if (data != null){
+        loadTodo(data);
+        todoList = data;
+    }else{
+        console.log('Creando almacenamiento local...');
+        todoList = [];
+    }
+    updateStorage();
+}
+
+function loadTodo(data){
+    for (i in data){
+        addRow(data[i], i);
+    }
 }
